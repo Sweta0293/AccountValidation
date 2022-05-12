@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: "prod"
+
+---
+
+spring:
+  profiles: dev
+datasources:
+  providers:
+    - name: source1
+      url: http://localhost:9191/datasource/check1
+    - name: source2
+      url: http://localhost:9191/datasource/check2
+      
+---
+
+spring:
+  profiles: prod
+datasources:
+  providers:
+    - name: source1
+      url: https://source1.com/v1/api/account/validate
+    - name: source2
+      url: https://source2.com/v2/api/account/validate
